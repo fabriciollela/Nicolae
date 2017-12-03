@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Materiais de Apoio</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-list>
+      <ion-item>
+        <ion-label>Selecione o ano letivo</ion-label>
+        <ion-select [(ngModel)]="ano">
+          <ion-option value="ano1">2014</ion-option>
+          <ion-option value="ano2">2015</ion-option>
+          <ion-option value="ano3">2016</ion-option>
+          <ion-option value="ano4">2017</ion-option>
+          <ion-option value="ano5">2018</ion-option>
+          <ion-option value="ano6">2019</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <ion-img width="60" height="60" src="assets/imgs/paulinha.png"></ion-img>
+          </ion-thumbnail>
+          <h4><b>Português</b></h4>
+          <h6>Paulinha dos Satos de Souza</h6>
+          <button ion-button clear item-end>Ver Arquivos</button>
+        </ion-item>
+      </ion-list>
+    
+  </ion-content>
+  
+  
+  

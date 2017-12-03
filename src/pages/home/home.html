@@ -3,16 +3,32 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Início</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <ion-card>
+    <ion-card-header>
+      Seja Bem Vindo 
+    </ion-card-header>
+    <ion-card-content>
+      Abaixo o horário do aluno para o dia de hoje:
+    </ion-card-content>
+  </ion-card>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-list>
+      <ion-item>
+          <h3><b>1° Horário</b></h3>
+        <ion-thumbnail item-start>
+          <ion-img width="60" height="60" src="assets/imgs/paulinha.png"></ion-img>
+        </ion-thumbnail>
+        <h4><b>Português</b></h4>
+        <h6>Paulinha dos Satos de Souza</h6>
+        <button ion-button clear item-end>Detalhar</button>
+      </ion-item>
+    </ion-list>
+  <ion-card-content>
+      Para acessar o boletim completo ou horários acesse o menu lateral
+    </ion-card-content>
 </ion-content>
