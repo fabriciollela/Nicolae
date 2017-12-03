@@ -1,6 +1,6 @@
+import { LoginPage } from './../pages/login/login';
 import { PerfilPage } from './../../../testApp/src/pages/perfil/perfil';
 import { MaterialApoioPage } from './../pages/material-apoio/material-apoio';
-import { LoginPage } from './../pages/login/login';
 import { NotasFaltasPage } from './../pages/notas-faltas/notas-faltas';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
@@ -20,7 +20,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen ) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -28,10 +28,10 @@ export class MyApp {
       { title: 'Início', component: HomePage },
       { title: 'Perfil', component: PerfilPage },   
       { title: 'Notas e Faltas', component: NotasFaltasPage },
-      { title: 'Materiais de Apoio', component: MaterialApoioPage }
+      { title: 'Materiais de Apoio', component: MaterialApoioPage },
+      { title: 'Sair', component: LoginPage }
       
     ];
-
   }
 
   initializeApp() {
@@ -48,4 +48,6 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
+  
 }

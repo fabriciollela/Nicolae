@@ -13,6 +13,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MaterialApoioPage } from '../pages/material-apoio/material-apoio';
 
+import { AccordionComponent} from '../components/accordion/accordion';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +23,8 @@ import { MaterialApoioPage } from '../pages/material-apoio/material-apoio';
     LoginPage,
     PerfilPage,
     RecuperaSenhaPage,
-    MaterialApoioPage
+    MaterialApoioPage,
+    AccordionComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { MaterialApoioPage } from '../pages/material-apoio/material-apoio';
     LoginPage,
     PerfilPage,
     RecuperaSenhaPage,
-    MaterialApoioPage
+    MaterialApoioPage,
+    AccordionComponent
   ],
   providers: [
     StatusBar,
