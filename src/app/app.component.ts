@@ -8,7 +8,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { RecuperaSenhaPage } from '../pages/recupera-senha/recupera-senha';
 
 @Component({
   templateUrl: 'app.html'
