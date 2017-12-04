@@ -1,5 +1,5 @@
+import { PerfilPage } from './../pages/perfil/perfil';
 import { LoginPage } from './../pages/login/login';
-import { PerfilPage } from './../../../testApp/src/pages/perfil/perfil';
 import { MaterialApoioPage } from './../pages/material-apoio/material-apoio';
 import { NotasFaltasPage } from './../pages/notas-faltas/notas-faltas';
 import { Component, ViewChild } from '@angular/core';

@@ -1,4 +1,4 @@
-import { PerfilPage } from './../../../testApp/src/pages/perfil/perfil';
+import { PerfilPage } from './../pages/perfil/perfil';
 import { RecuperaSenhaPage } from './../pages/recupera-senha/recupera-senha';
 import { LoginPage } from './../pages/login/login';
 import { NotasFaltasPage } from './../pages/notas-faltas/notas-faltas';
