@@ -17,28 +17,29 @@
   </ion-card>
 
   <ion-card>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
     <ion-list>
 
       <ion-item>
         <ion-label floating>Matrícula</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" formControlName="email"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Senha</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>
 
     </ion-list>
-    <button ion-button (click)="openHomePage()" icon-only full>
-      <ion-icon >Entrar</ion-icon>
-    </button>
+    <button ion-button>Entrar</button>
     <ion-list>
-        <ion-item>
-         <p>Não consegue logar?</p> 
-          <button ion-button outline item-end icon-left (click)="openRecuperaSenha()">
-            Clique aqui
-          </button>
-        </ion-item>
-      </ion-list>  </ion-card>
+      <ion-item>
+        <p>Não consegue logar?</p>
+        <button ion-button outline item-end icon-left (click)="openRecuperaSenha()">
+          Clique aqui
+        </button>
+      </ion-item>
+    </ion-list>
+    </form>
+  </ion-card>
 </ion-content>

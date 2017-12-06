@@ -13,7 +13,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MaterialApoioPage } from '../pages/material-apoio/material-apoio';
 
-import { AccordionComponent} from '../components/accordion/accordion';
+import { AccordionComponent } from '../components/accordion/accordion';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth'
+import { FIREBASE_CONFIG } from './app.firebase.config';
 
 @NgModule({
   declarations: [
@@ -24,11 +28,13 @@ import { AccordionComponent} from '../components/accordion/accordion';
     PerfilPage,
     RecuperaSenhaPage,
     MaterialApoioPage,
-    AccordionComponent
+    AccordionComponent,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,7 +50,7 @@ import { AccordionComponent} from '../components/accordion/accordion';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
