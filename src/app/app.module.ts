@@ -1,3 +1,4 @@
+import { AlteraSenhaPage } from './../pages/altera-senha/altera-senha';
 import { PerfilPage } from './../pages/perfil/perfil';
 import { RecuperaSenhaPage } from './../pages/recupera-senha/recupera-senha';
 import { LoginPage } from './../pages/login/login';
@@ -28,6 +29,7 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
     PerfilPage,
     RecuperaSenhaPage,
     MaterialApoioPage,
+    AlteraSenhaPage,
     AccordionComponent,
   ],
   imports: [
@@ -45,6 +47,8 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
     PerfilPage,
     RecuperaSenhaPage,
     MaterialApoioPage,
+    MaterialApoioPage,
+    AlteraSenhaPage,
     AccordionComponent
   ],
   providers: [

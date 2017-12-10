@@ -1,5 +1,6 @@
+import { AlteraSenhaPage } from './../altera-senha/altera-senha';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the PerfilPage page.
@@ -15,11 +16,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PerfilPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerfilPage');
   }
-
+  altearSenha() {
+    this.navCtrl.push(AlteraSenhaPage)
+  }
+  salvarPerfil() {
+    let toast = this.toastCtrl.create({
+      message: 'Operação realizada com sucesso.',
+      duration: 3000
+    });
+    toast.present();
+  }
 }

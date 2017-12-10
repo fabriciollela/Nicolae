@@ -6,7 +6,53 @@
       <ion-title>Perfil</ion-title>
     </ion-navbar>
   </ion-header>
-  
-  <ion-content padding>
 
-  </ion-content>
+
+<ion-content padding>
+
+
+  <form #formCtrl="ngForm">
+    <div align="center" *ngIf="formCtrl.form.valid">
+
+      <h1> Perfil</h1>
+      <img class="profile-image" src="assets/imgs/paulinha.png">
+      <h4>Nome do Aluno </h4>
+      <h5>Turma/Ano</h5>
+    </div>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Telefone Fixo</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Telefone Celular</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Cidade</ion-label>
+        <ion-select>
+          <ion-option value="Santa City">Santa City</ion-option>
+          <ion-option value="Cei">Cei</ion-option>
+          <ion-option value="gama">Gama</ion-option>
+        </ion-select>
+      </ion-item>
+     </ion-list>
+  </form>
+
+  <form #formCtrl="ngForm">
+       <ion-list>
+        <ion-item>
+          <ion-label floating>Endereço Completo</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+
+              <ion-item>
+          <ion-label>Aniversário</ion-label>
+          <ion-datetime required displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY"></ion-datetime>
+        </ion-item>
+  
+      </ion-list>
+    </form>
+    <button color="secondary" [disabled]="!formCtrl.form.valid" ion-button block (click)="salvarPerfil()">Salvar Informações</button>
+    <button color="danger" ion-button block (click)="altearSenha()">Alterar Senha</button>    
+</ion-content>
