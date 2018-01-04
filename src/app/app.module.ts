@@ -18,7 +18,12 @@ import { AccordionComponent } from '../components/accordion/accordion';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth'
-import { FIREBASE_CONFIG } from './app.firebase.config';
+import { FIREBASE_CONFIG } from './app.firebase.config'; 
+
+
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
+import { AuthProvider } from '../providers/auth/auth';
+
 
 @NgModule({
   declarations: [
@@ -36,6 +41,7 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
@@ -54,6 +60,7 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
   providers: [
     StatusBar,
     SplashScreen,
+    AuthProvider,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
