@@ -1,10 +1,12 @@
 accordion {
     
         .card-header{
-            background-color: map-get($colors, primary);
-            color: rgb(255, 255, 255);
+            background-color: rgb(255, 154, 154);
+            color: rgb(255, 154, 154);
+            padding: 3px 3px; 
         }
         .card-content {
+            background-color: rgb(255, 233, 233);
             padding: 0px 16px; 
             max-height: 0px;
         }

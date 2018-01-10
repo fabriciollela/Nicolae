@@ -1,4 +1,9 @@
 import { Component, ViewChild, OnInit, Renderer, Input } from '@angular/core';
+import { NavController, ToastController, ActionSheetController } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database-deprecated";
+import { Horario } from '../../models/horario';
+import { AuthProvider } from '../../providers/auth/auth';
 
 @Component({
   selector: 'accordion',
@@ -12,8 +17,19 @@ export class AccordionComponent implements OnInit {
 
   icon: string = "arrow-forward";
 
-  constructor(public renderer: Renderer) {
+  horarioListRef$: FirebaseListObservable<Horario[]>
 
+  constructor(public renderer: Renderer,
+    private afAuth: AngularFireAuth,
+    private toast: ToastController,
+    public navCtrl: NavController,
+    private database: AngularFireDatabase,
+    private ActionSheetCtrl: ActionSheetController,
+    public authData: AuthProvider) {
+      
+    // Get current user Id
+    var currentUserId = this.authData.afAuth.auth.currentUser.uid;
+    this.horarioListRef$ = this.database.list(`/student/${currentUserId}/2011/horarios/`);
   }
 
   ngOnInit() {

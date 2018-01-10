@@ -10,36 +10,31 @@
 <ion-content padding>
   <ion-card>
     <ion-card-header>
-      Seja Bem Vindo 
+      Seja Bem Vindo
     </ion-card-header>
     <ion-card-content>
       Abaixo o horário do aluno para o dia de hoje:
     </ion-card-content>
   </ion-card>
 
-  <!--ion-list>
-    <ion-item*ngFor="let item of userListRef$ | async" >
-        <h3><b>Item email: {{ item.email }}</b></h3>
-      <ion-thumbnail item-start>
-        <ion-img width="60" height="60" src="assets/imgs/paulinha.png"></ion-img>
-      </ion-thumbnail>
-      <h4><b>firstName: {{ item.firstName }}</b></h4>
-      <h6>lastName: {{ item.lastName }}</h6>
-      <button ion-button clear item-end>Detalhar</button>
-    </ion-item>
-  </ion-list-->
-  <ion-card-content>
-      Para acessar o boletim completo ou horários acesse o menu lateral
-    </ion-card-content>
-
+  <ion-card>
     <ion-list>
-      <!-- Repeat the ion-item for as many times that we have inside of 
-        our shopping list. -->
-      <ion-item *ngFor="let item of userListRef$ | async" (click)="selectShoppingItem(item)">
-        <h2>Nome: {{ item.uIdChild }}</h2>
-        <h3>Sobrenome: {{ item.lastName }}</h3>
+      <ion-item *ngFor="let item of horarioListRef$ | async">
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/paulinha.png">
+        </ion-thumbnail>
+        <h3><b>{{ item.$key }}° Horário</b></h3>
+        <h2>{{ item.materia }}</h2>
+        <p>{{ item.professor }}</p>
+        <button ion-button clear item-end>Detalhar</button>
+        <div>
+          
+        </div>
       </ion-item>
     </ion-list>
-    
-    
+  </ion-card>
+  <ion-card-content>
+    Para acessar o boletim completo ou horários acesse o menu lateral
+  </ion-card-content>
+
 </ion-content>

@@ -22,6 +22,18 @@
       </ion-item>
     </ion-list>
    
+    <ion-list>
+      <ion-item>
+        <ion-label>Selecione o bimestre</ion-label>
+        <ion-select [(ngModel)]="bimestre">
+          <ion-option value="bimestre1">1° Bimestre</ion-option>
+          <ion-option value="bimestre2">2° Bimestre</ion-option>
+          <ion-option value="bimestre3">3° Bimestre</ion-option>
+          <ion-option value="bimestre4">4° Bimestre</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    
     <ion-content padding>
         <accordion></accordion>
         <accordion></accordion>

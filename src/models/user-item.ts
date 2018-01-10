@@ -5,4 +5,5 @@ export interface UserTesteItem {
     firstName: string;
     lastName: string;
     turma: string;
+    photoURL: string;
   }
