@@ -1,61 +1,50 @@
 <ion-header>
-    <ion-navbar>
-      <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-      <ion-title>Notas e Faltas</ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content padding>
-    <ion-list>
-      <ion-item>
-        <ion-label>Selecione o ano letivo</ion-label>
-        <ion-select [(ngModel)]="ano">
-          <ion-option value="ano1">2014</ion-option>
-          <ion-option value="ano2">2015</ion-option>
-          <ion-option value="ano3">2016</ion-option>
-          <ion-option value="ano4">2017</ion-option>
-          <ion-option value="ano5">2018</ion-option>
-          <ion-option value="ano6">2019</ion-option>
-        </ion-select>
-      </ion-item>
-    </ion-list>
-
-    <ion-list>
-      <ion-item>
-        <ion-label>Selecione o bimestre</ion-label>
-        <ion-select [(ngModel)]="bimestre">
-          <ion-option value="bimestre1">1° Bimestre</ion-option>
-          <ion-option value="bimestre2">2° Bimestre</ion-option>
-          <ion-option value="bimestre3">3° Bimestre</ion-option>
-          <ion-option value="bimestre4">4° Bimestre</ion-option>
-        </ion-select>
-      </ion-item>
-    </ion-list>
-  
-  
-    <ion-card>
-      <ion-list>
-        <ion-item *ngFor="let item of notasListRef$ | async">
-          <ion-thumbnail item-start>
-            <img src="assets/imgs/paulinha.png">
-          </ion-thumbnail>
-          <h3><b>{{ item.materia }}</b></h3>
-          <h2>Média Bimestral: {{ item.nota }}</h2>
-          <p>Faltas: {{ item.faltas }}</p>
-          <button ion-button clear item-end>Detalhar</button>
-          <div>
-            
-          </div>
-        </ion-item>
-      </ion-list>
-    </ion-card>
-  
-    <button ion-button icon-only full>
-      <ion-icon name="print"  >Exportar Boletim  </ion-icon>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
     </button>
+    <ion-title>Notas e Faltas</ion-title>
+  </ion-navbar>
+</ion-header> 
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Selecione o ano letivo</ion-label>
+      <ion-select [(ngModel)]="ano">
+        <ion-option value="ano1">2014</ion-option>
+        <ion-option value="ano2">2015</ion-option>
+        <ion-option value="ano3">2016</ion-option>
+        <ion-option value="ano4">2017</ion-option>
+        <ion-option value="ano5">2018</ion-option>
+        <ion-option value="ano6">2019</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Selecione o bimestre</ion-label>
+      <ion-select [(ngModel)]="bimestre">
+        <ion-option value="bimestre1">1° Bimestre</ion-option>
+        <ion-option value="bimestre2">2° Bimestre</ion-option>
+        <ion-option value="bimestre3">3° Bimestre</ion-option>
+        <ion-option value="bimestre4">4° Bimestre</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+ 
+  <ion-content padding>
+    <accordion-list *ngFor="let item of items; let index = index" [title]="item.materia" textColor="#FFF" hasMargin="false" headerColor="#F53D3D"
+      [expanded]="index === 0">
+      <p text-wrap>Média Final:<b>{{item.nota}}</b></p>
+      <p text-wrap>Faltas:{{item.faltas}}</p>
+    </accordion-list>
   </ion-content>
-  
-  
-  
+
+</ion-content>
+<ion-footer no-shadow>
+  <ion-toolbar position="bottom">
+    <button ion-button class="exportar-buttom" color="danger" (click)="exportarBoletim()" icon-only full>Exportar</button>
+  </ion-toolbar>
+</ion-footer>

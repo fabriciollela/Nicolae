@@ -1,3 +1,26 @@
 page-home {
 
+    ion-content {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-color: transparent;
+      }
+      ion-item-group{
+        margin-top: 0.5pt;
+    }
+    .ion-card-title {
+        border-radius: 5px;
+        font-size: 2em;
+        border: 0.4pt solid #fff;
+        background-color: #DF0101;
+        text-align: center;
+        
+      }
+      .ion-card-horarios {
+        border-radius: 8px;
+        border: 0.4pt solid #d49f9f;
+        background-color: #fff;
+        
+      }
 }

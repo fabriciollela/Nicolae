@@ -1,3 +1,4 @@
+import { AccordionListComponent } from './../../../ionic3-components/src/components/accordion-list/accordion-list';
 import { AlteraSenhaPage } from './../pages/altera-senha/altera-senha';
 import { PerfilPage } from './../pages/perfil/perfil';
 import { RecuperaSenhaPage } from './../pages/recupera-senha/recupera-senha';
@@ -14,8 +15,6 @@ import { HomePage } from '../pages/home/home';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MaterialApoioPage } from '../pages/material-apoio/material-apoio';
-
-import { AccordionComponent } from '../components/accordion/accordion';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth'
@@ -36,7 +35,7 @@ import { AuthProvider } from '../providers/auth/auth';
     RecuperaSenhaPage,
     MaterialApoioPage,
     AlteraSenhaPage,
-    AccordionComponent,
+    AccordionListComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +55,7 @@ import { AuthProvider } from '../providers/auth/auth';
     MaterialApoioPage,
     MaterialApoioPage,
     AlteraSenhaPage,
-    AccordionComponent
+    AccordionListComponent
   ],
   providers: [
     StatusBar,

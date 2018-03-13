@@ -1,56 +1,61 @@
+import { HomePage } from './../home/home';
 import { User } from './../../models/users';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { RecuperaSenhaPage } from './../recupera-senha/recupera-senha';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
-
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AlertController, NavController, App, LoadingController, IonicPage, ModalController } from 'ionic-angular'; 
 
 @IonicPage()
 @Component({
   selector: 'page-login',
-  templateUrl: 'login.html',
+  templateUrl: 'login.html',  
 })
 export class LoginPage {
+  rootPage: any;
+ 
+  public loginForm: any;
+  public backgroundImage = 'assets/imgs/bgapp.jpg';
 
-  private user : User;
 
-  private loginForm : FormGroup;
+  constructor(
+    public loadingCtrl: LoadingController,
+    public alertCtrl: AlertController,
+    public navCtrl:NavController,
+    public modalCtrl: ModalController,
+    public app: App
+  ) {      }
 
-  constructor(private afAuth:AngularFireAuth,
-    public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
-      this.loginForm = this.formBuilder.group({
-        email: ['', Validators.required],               
-        password: ['', Validators.required],
-      })
+  login() {
+    const loading = this.loadingCtrl.create({
+      duration: 500
+    });
+
+    loading.onDidDismiss(() => {
+      const alert = this.alertCtrl.create({
+        title: 'Você entrou !',
+        subTitle:'Para acessar o boletim completo ou horários acesse o menu lateral',
+        buttons: ['Continuar']
+      });
+      alert.present();
+      this.navCtrl.setRoot(HomePage);
+    });
+
+    loading.present();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+openHomePage() {
+    this.navCtrl.setRoot(HomePage);
   }
-  openHomePage() {
-    this.navCtrl.setRoot(HomePage)
-  }
+
   openRecuperaSenha() {
-    this.navCtrl.push(RecuperaSenhaPage)
+     this.navCtrl.push(RecuperaSenhaPage);
   }
-  async login() {
-        
-    this.user = {
-      email: this.loginForm.value.email.toString(),
-      password: this.loginForm.value.password.toString()
-    }
-          
-    try {
-      const result = await this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password);
-            
-      if (true) {
-        this.openHomePage()
-      }  
-    }
-    catch (e) {
-      console.error(e);
-    }
+
+  openSignupModal() {
+    this.openModal('SignupModalPage');
+  }
+
+  openModal(pageName) {
+    this.modalCtrl.create(pageName, null, { cssClass: 'inset-modal' })
+                  .present();
   }
 }

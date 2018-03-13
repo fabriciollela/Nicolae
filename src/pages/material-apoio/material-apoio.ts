@@ -17,19 +17,30 @@ import { AuthProvider } from '../../providers/auth/auth';
   templateUrl: 'material-apoio.html',
 })
 export class MaterialApoioPage {
-  horarioListRef$: FirebaseListObservable<Horario[]>
-
+  items = [
+    {
+      name: 'Matemática',
+      description: 'Prova.pdf',
+    },
+    {
+      name: 'Português',
+      description: 'Prova.pdf',
+    },
+    {
+      name: 'História',
+      description: 'Prova.pdf',
+    },
+    {
+      name: 'Física',
+      description: 'Prova.pdf',
+    }
+  ]
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private afAuth: AngularFireAuth,
     private toast: ToastController,
     private database: AngularFireDatabase,
     private ActionSheetCtrl: ActionSheetController,
-    public authData: AuthProvider) {
-
-    // Get current user Id
-    var currentUserId = this.authData.afAuth.auth.currentUser.uid;
-    this.horarioListRef$ = this.database.list(`/student/${currentUserId}/2011/horarios/`);
-  }
+    public authData: AuthProvider) {  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MaterialApoioPage');

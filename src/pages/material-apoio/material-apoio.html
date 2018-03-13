@@ -6,7 +6,7 @@
       <ion-title>Materiais de Apoio</ion-title>
     </ion-navbar>
   </ion-header>
-  
+   
   <ion-content padding>
     <ion-list>
       <ion-item>
@@ -35,10 +35,15 @@
     </ion-list>
     
     <ion-content padding>
-        <accordion></accordion>
-        <accordion></accordion>
-        <accordion></accordion>
-        <accordion></accordion>
+      <accordion-list *ngFor="let item of items; let index = index"
+      [title]="item.name"
+      textColor="#FFF"
+      hasMargin="false"
+      headerColor="#F53D3D"
+      [expanded]="index === 0">
+      <p text-wrap>{{item.description}}</p>
+      <p text-wrap>{{item.description}}</p>
+    </accordion-list>
       </ion-content>
     
   </ion-content>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, LoadingController, AlertController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -7,19 +7,32 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
   templateUrl: 'recupera-senha.html',
 })
 export class RecuperaSenhaPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController,
+     public navParams: NavParams,
+     public toastCtrl: ToastController,
+     public alertCtrl: AlertController,
+     public loadingCtrl: LoadingController,
+    ) {
   }
-
+ 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecuperaSenhaPage');
   }
   enviarEmail() {
-    let toast = this.toastCtrl.create({
-      message: 'Informações enviadas com sucesso! Verifique seu email.',
-      duration: 3000
+    const loading = this.loadingCtrl.create({
+      duration: 500
     });
-    toast.present();
+
+    loading.onDidDismiss(() => {
+      const alert = this.alertCtrl.create({
+        title: 'Obrigado :)',
+        subTitle: 'Foi enviado um email com as informações de recuperação de senha.',
+        buttons: ['OK']
+      });
+      alert.present();
+    });
+
+    loading.present();
   }
 }
 

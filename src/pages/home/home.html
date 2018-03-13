@@ -7,34 +7,109 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card>
-    <ion-card-header>
-      Seja Bem Vindo
-    </ion-card-header>
-    <ion-card-content>
-      Abaixo o horário do aluno para o dia de hoje:
+<ion-content [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+  <ion-card class="ion-card-title" color="danger">
+
+    <ion-card-content >
+      Aulas de hoje
     </ion-card-content>
+  
   </ion-card>
 
-  <ion-card>
-    <ion-list>
-      <ion-item *ngFor="let item of horarioListRef$ | async">
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/paulinha.png">
-        </ion-thumbnail>
-        <h3><b>{{ item.$key }}° Horário</b></h3>
-        <h2>{{ item.materia }}</h2>
-        <p>{{ item.professor }}</p>
-        <button ion-button clear item-end>Detalhar</button>
-        <div>
-          
-        </div>
-      </ion-item>
-    </ion-list>
-  </ion-card>
-  <ion-card-content>
-    Para acessar o boletim completo ou horários acesse o menu lateral
-  </ion-card-content>
+  <ion-item-group>
+    <ion-card class="ion-card-horarios">
+      <ion-list no-lines>
+        <ion-item (click)="openAulaInfoModalPage()">
+          <ion-avatar item-start>
+            <img src="assets/imgs/paulinha.png">
+          </ion-avatar>
+          <h2>
+            <b>Português</b>
+          </h2>
+          <h3>1° Horário - Paulinha</h3>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-card class="ion-card-horarios">
+      <ion-list no-lines>
+        <ion-item (click)="openAulaInfoModalPage()">
+          <ion-avatar item-start>
+            <img src="assets/imgs/paulinha.png">
+          </ion-avatar>
+          <h2>
+            <b>Matemática</b>
+          </h2>
+          <h3>2° Horário - Claudinha</h3>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-card class="ion-card-horarios">
+      <ion-list no-lines>
+        <ion-item (click)="openAulaInfoModalPage()">
+          <ion-avatar item-start>
+            <img src="assets/imgs/paulinha.png">
+          </ion-avatar>
+          <h2>
+            <b>Geografia</b>
+          </h2>
+          <h3>3° Horário - Danielinha</h3>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-card class="ion-card-horarios">
+      <ion-list no-lines>
+        <ion-item (click)="openAulaInfoModalPage()">
+          <ion-avatar item-start>
+            <img src="assets/imgs/paulinha.png">
+          </ion-avatar>
+          <h2>
+            <b>História</b>
+          </h2>
+          <h3>4° Horário - Cleidinha</h3>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-card class="ion-card-horarios">
+      <ion-list no-lines>
+        <ion-item (click)="openAulaInfoModalPage()">
+          <ion-avatar item-start>
+            <img src="assets/imgs/paulinha.png">
+          </ion-avatar>
+          <h2>
+            <b>Filosofia</b>
+          </h2>
+          <h3>5° Horário - Marcinha</h3>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-card class="ion-card-horarios">
+      <ion-list no-lines>
+        <ion-item (click)="openAulaInfoModalPage()">
+          <ion-avatar item-start>
+            <img src="assets/imgs/paulinha.png">
+          </ion-avatar>
+          <h2>
+            <b>Ciências</b>
+          </h2>
+          <h3>6° Horário - Carlinha</h3>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </ion-item-group>
 
 </ion-content>

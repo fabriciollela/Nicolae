@@ -1,46 +1,44 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding text-center>
-  <ion-card>
-    <ion-card-header>
-      <b>Slogan</b>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-thumbnail item-start text-center>
-        <ion-img width="200" height="150" src="assets/imgs/logo.png"></ion-img>
-      </ion-thumbnail>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-      <form [formGroup]="loginForm" (ngSubmit)="login()">
-    <ion-list>
-
-      <ion-item>
-        <ion-label floating>Matrícula</ion-label>
-        <ion-input type="text" formControlName="email"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating>Senha</ion-label>
-        <ion-input type="password" formControlName="password"></ion-input>
-      </ion-item>
-
-    </ion-list>
-    <button ion-button full>Entrar</button>
-    <ion-list>
-      <ion-item>
-        <p>Não consegue</p>
-        <p>entrar?</p>
-        <button ion-button outline item-end icon-left (click)="openRecuperaSenha()">
-          Clique aqui
-        </button>
-      </ion-item>
-    </ion-list>
-    </form>
-  </ion-card>
+<ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+  <ion-header>
+    <ion-navbar>
+    </ion-navbar>
+  </ion-header>
+  <div padding>
+    <ion-row>
+      <ion-col>
+        <img class="logo" src="assets/logo/logo-nicolae.png" />
+      </ion-col>
+    </ion-row>
+    <ion-row> 
+      <ion-col>
+        <ion-list inset class="no-border">
+          <ion-item>
+            <ion-input type="text" maxlength="15" placeholder="Matrícula"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password"placeholder="Senha"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button class="login-button" color="danger" (click)="login()" >Entrar</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div (click)="openRecuperaSenha()">
+          <span>Ou recupere sua senha</span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>
+
+<ion-footer no-shadow>
+  <ion-toolbar position="bottom">
+      <button ion-button color="danger" (click)="openSignupModal()" icon-only full >Modal de Filhos</button>
+  </ion-toolbar>
+</ion-footer>
+
