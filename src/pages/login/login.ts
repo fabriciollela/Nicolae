@@ -1,5 +1,4 @@
 import { HomePage } from './../home/home';
-import { User } from './../../models/users';
 import { RecuperaSenhaPage } from './../recupera-senha/recupera-senha';
 import { Component } from '@angular/core';
 import { AlertController, NavController, App, LoadingController, IonicPage, ModalController } from 'ionic-angular'; 
@@ -31,15 +30,18 @@ export class LoginPage {
 
     loading.onDidDismiss(() => {
       const alert = this.alertCtrl.create({
-        title: 'Você entrou !',
+        title: 'Sucesso',
         subTitle:'Para acessar o boletim completo ou horários acesse o menu lateral',
         buttons: ['Continuar']
       });
       alert.present();
       this.navCtrl.setRoot(HomePage);
+
     });
 
     loading.present();
+    this.openModal('SignupModalPage');
+
   }
 
 openHomePage() {

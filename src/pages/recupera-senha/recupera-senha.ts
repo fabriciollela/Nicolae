@@ -20,7 +20,7 @@ export class RecuperaSenhaPage {
   }
   enviarEmail() {
     const loading = this.loadingCtrl.create({
-      duration: 500
+      duration: 500 
     });
 
     loading.onDidDismiss(() => {

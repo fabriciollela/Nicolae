@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { HomePage } from './../home/home';
-import { AlertController,ViewController, NavController, App, LoadingController, IonicPage, ModalController } from 'ionic-angular'; 
+import { AlertController, ViewController, NavController, LoadingController, IonicPage } from 'ionic-angular';
 
 
 @IonicPage()
@@ -14,7 +13,7 @@ export class SignupModalPage {
   constructor(
     public viewCtrl: ViewController,
     public loadingCtrl: LoadingController,
-    public navCtrl:NavController,
+    public navCtrl: NavController,
     public alertCtrl: AlertController
   ) {
   }
@@ -26,12 +25,12 @@ export class SignupModalPage {
 
     loading.onDidDismiss(() => {
       const alert = this.alertCtrl.create({
-        title: 'Parabéns',
-        subTitle: 'Você está logado',
-        buttons: ['Continuar']
+        title: 'Perfil Selecionado',
+        subTitle: 'Você está utilizando o perfil do aluno "Joaquina"',
+        buttons: ['Ok']
       });
       alert.present();
-      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.pop();
     });
 
     loading.present();

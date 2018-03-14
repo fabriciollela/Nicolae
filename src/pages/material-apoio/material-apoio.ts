@@ -1,15 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams , ToastController, ActionSheetController  } from 'ionic-angular';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database-deprecated";
-import { Horario } from '../../models/horario';
-import { AuthProvider } from '../../providers/auth/auth';
-/**
- * Generated class for the MaterialApoioPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams   } from 'ionic-angular';
+
 
 @IonicPage()
 @Component({
@@ -33,14 +24,11 @@ export class MaterialApoioPage {
     {
       name: 'Física',
       description: 'Prova.pdf',
-    }
+    } 
   ]
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-    private afAuth: AngularFireAuth,
-    private toast: ToastController,
-    private database: AngularFireDatabase,
-    private ActionSheetCtrl: ActionSheetController,
-    public authData: AuthProvider) {  }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams) {  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MaterialApoioPage');

@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController, ActionSheetController, ModalController } from 'ionic-angular';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database-deprecated";
-import { Horario } from '../../models/horario';
-import { AuthProvider } from '../../providers/auth/auth';
+import { NavController,   ModalController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -11,23 +7,12 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class HomePage {
 
-  horarioListRef$: FirebaseListObservable<Horario[]>
   public backgroundImage = 'assets/imgs/bghome.jpg';
 
   constructor(
-    private afAuth: AngularFireAuth,
-    private toast: ToastController,
     public navCtrl: NavController,
-    public modalCtrl: ModalController,
-    private database: AngularFireDatabase,
-    private ActionSheetCtrl: ActionSheetController,
-    public authData: AuthProvider) {
-
-
-          // Get current user Id
-    var currentUserId = this.authData.afAuth.auth.currentUser.uid;
-    this.horarioListRef$ = this.database.list(`/student/${currentUserId}/2011/horarios/`);
-
+    public modalCtrl: ModalController) {
+ 
   }
 
     ionViewDidLoad() {

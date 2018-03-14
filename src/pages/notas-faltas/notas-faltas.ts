@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController, ToastController, LoadingController, AlertController } from 'ionic-angular';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database-deprecated";
-import { Notas } from '../../models/notas';
-import { AuthProvider } from '../../providers/auth/auth';
+import { IonicPage,  NavParams, LoadingController, AlertController } from 'ionic-angular';
 
 
 @IonicPage()
@@ -38,7 +34,6 @@ export class NotasFaltasPage {
 
   constructor(
     public navParams: NavParams,
-    public toastCtrl: ToastController,
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
   ) {
@@ -47,11 +42,7 @@ export class NotasFaltasPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecuperaSenhaPage');
   }
-  enviarEmail() {
-    const loading = this.loadingCtrl.create({
-      duration: 500
-    });
-  }
+ 
   exportarBoletim() {
     const loading = this.loadingCtrl.create({
       duration: 500

@@ -1,10 +1,14 @@
 <ion-content>
   <ion-row class="align-center" style="margin-left:10px">
-    <ion-card>
-    <p><b>Selecione um filho na lista abaixo:</b></p>
-  </ion-card>
-  </ion-row>
-  <ion-row class="align-center">
+    <ion-card class="ion-card-title" color="danger">
+
+      <ion-card-content >
+        Selecione um filho na lista abaixo:
+      </ion-card-content>
+    
+    </ion-card>
+     </ion-row>
+  <ion-row class="ion-card">
     <ion-list no-lines>
       <ion-item *ngFor="let user of users" (click)="login()">
         <ion-avatar item-start>
