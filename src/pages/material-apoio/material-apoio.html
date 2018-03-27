@@ -41,8 +41,13 @@
       hasMargin="false"
       headerColor="#F53D3D"
       [expanded]="index === 0">
-      <p text-wrap>{{item.description}}</p>
-      <p text-wrap>{{item.description}}</p>
+      <ion-list>
+        <ion-item>
+        <p text-wrap>{{item.description}}</p>        
+        <button ion-button clear item-end >Baixar</button>
+      </ion-item>
+      </ion-list>
+
     </accordion-list>
       </ion-content>
     
