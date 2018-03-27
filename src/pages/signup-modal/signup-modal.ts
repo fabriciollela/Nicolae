@@ -26,7 +26,7 @@ export class SignupModalPage {
     loading.onDidDismiss(() => {
       const alert = this.alertCtrl.create({
         title: 'Perfil Selecionado',
-        subTitle: 'Você está utilizando o perfil do aluno "Joaquina"',
+        subTitle: 'Você está utilizando o perfil do aluno "Paulinha"',
         buttons: ['Ok']
       });
       alert.present();

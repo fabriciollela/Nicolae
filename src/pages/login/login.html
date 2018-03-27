@@ -13,10 +13,10 @@
       <ion-col>
         <ion-list inset class="no-border">
           <ion-item>
-            <ion-input type="text" maxlength="15" placeholder="Matrícula"></ion-input>
+            <ion-input type="text" maxlength="50" placeholder="e-mail" [(ngModel)]="model.email"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input type="password"placeholder="Senha"></ion-input>
+            <ion-input type="password" maxlength="50" placeholder="Senha" [(ngModel)]="model.password"></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
