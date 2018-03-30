@@ -37,6 +37,11 @@ page-login {
     }
     span {
       color: white;
+      float: left;
+      font-size: 12px;
+      padding-top: 3px;
+      padding-bottom: 10px;
+
     }
     ion-item {
       // border-radius: 30px !important;
@@ -53,10 +58,12 @@ page-login {
       width: 100%;
       // border-radius: 30px;
       font-size: 0.9em;
+
       // border: 1px solid #fff;
       background-color: #DF0101;
       
     }
+
     ion-modal,
     .show-page {
       // transparent black background overlay

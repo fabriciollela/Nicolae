@@ -9,32 +9,33 @@
         <img class="logo" src="assets/logo/logo-nicolae.png" />
       </ion-col>
     </ion-row>
-    <ion-row> 
-      <ion-col>
-        <ion-list inset class="no-border">
-          <ion-item>
-            <ion-input type="text" maxlength="50" placeholder="e-mail" [(ngModel)]="model.email"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input type="password" maxlength="50" placeholder="Senha" [(ngModel)]="model.password"></ion-input>
-          </ion-item>
-        </ion-list>
-      </ion-col>
+
+    <ion-row>
+      <form padding [formGroup]="loginForm" (submit)="login()" novalidate>
+        <ion-item>
+          <ion-input [(ngModel)]="model.email" formControlName="email" type="text" placeholder="E-mail" clearInput clearOnEdit="false">
+          </ion-input>
+        </ion-item>
+        <span *ngIf="errorEmail" class="error"> {{messageEmail}}</span>
+        <ion-item>
+          <ion-input [(ngModel)]="model.password"  formControlName="password" type="password" placeholder="Senha" clearInput clearOnEdit="false">
+          </ion-input>
+        </ion-item>
+        <span *ngIf="errorPassword" class="error"> {{messagePassword}}</span>
+      </form>
     </ion-row>
     <ion-row>
+
       <ion-col>
-        <button ion-button class="login-button" color="danger" (click)="login()" >Entrar</button>
+        <button ion-button class="login-button" color="danger" (click)="login()">Entrar</button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
         <div (click)="openRecuperaSenha()">
-          <span>Ou recupere sua senha</span>
+          <button ion-button color="light"  small outline>Ou recupere sua senha</button>
         </div>
       </ion-col>
     </ion-row>
   </div>
 </ion-content>
-
-
-

@@ -8,7 +8,7 @@ import { AccordionListComponent } from './../../../ionic3-components/src/compone
 import { MyApp } from './app.component';
 import { UsersProvider } from '../providers/users/users';
 import { HttpClientModule } from '@angular/common/http';
- 
+
 //Páginas
 import { AlteraSenhaPage } from './../pages/altera-senha/altera-senha';
 import { PerfilPage } from './../pages/perfil/perfil';
@@ -30,9 +30,9 @@ import { MaterialApoioPage } from '../pages/material-apoio/material-apoio';
     MaterialApoioPage,
     AlteraSenhaPage,
     AccordionListComponent
-   ],
+  ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule
   ],
@@ -53,7 +53,6 @@ import { MaterialApoioPage } from '../pages/material-apoio/material-apoio';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    UsersProvider
-  ]
+    UsersProvider]
 })
 export class AppModule { }
