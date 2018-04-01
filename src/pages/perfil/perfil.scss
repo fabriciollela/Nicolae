@@ -1,3 +1,70 @@
 page-perfil {
-
+.header-image {
+        background-image: url(../../assets/imgs/bgapp.jpg);
+        height: 20vh;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+        z-index: -1;
+    }
+    .main-content {
+        margin-top: -20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 20px;
+        background-color: white;
+        -webkit-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+        // background: #F5F5F5;
+        position: relative !important;
+    }
+    .circular {
+        width: 100px;
+        height: 100px;
+        position: inherit;
+        border-radius: 50%;
+        -webkit-border-radius: 150px;
+        -moz-border-radius: 150px;
+        border: solid white;
+        background: url(../../assets/img/avatar/cosima-avatar.jpg) no-repeat;
+        background-size: 100%;
+        margin-top: -70px;
+        margin-left: auto;
+        margin-right: auto;
+        // margin-bottom: 50px;
+    }
+    .profile-description {
+        font-size: 15px;
+        color: #888;
+    }
+        ion-input {
+      border-radius: 7px !important;
+      padding-left: 20px !important;
+      margin-bottom: 10px;
+      background-color: #f3d3d3;
+      font-size: 0.9em;
+    }
+    ion-textarea  {
+        border-radius: 7px !important;
+        padding-left: 20px !important;
+        margin-bottom: 10px;
+        background-color: #f3d3d3;
+        font-size: 0.9em;
+      }
+      ion-datetime  {
+        border-radius: 7px !important;
+        padding-left: 3px !important;
+        margin-bottom: 10px;
+        background-color: #f3d3d3;
+        font-size: 0.9em;
+      }
+      .error {
+        color: rgb(236, 30, 30);
+        float: left;
+        padding-left: 20px;
+        font-size: 12px;
+        
+  
+      }
 }

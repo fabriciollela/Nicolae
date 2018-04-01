@@ -64,7 +64,7 @@ this.model = new User();
     }
   }
 
-  login() {
+  validarLogin() {
     this.userProvider.login(this.model.email, this.model.password).then((result: any) => {
       let { email, password } = this.loginForm.controls;
 

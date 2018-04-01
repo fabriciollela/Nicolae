@@ -7,47 +7,59 @@
   </ion-navbar>
 </ion-header>
 
+<ion-content parallax-header no-bounce class="bg-modal">
+  <div class="header-image"></div>
+  <div class="main-content" text-wrap text-center>
+      <div >
+        <img class="circular" src="assets/imgs/paulinha.png" />
+      </div>
+      <h2>Paulinha dos Santos Ferreira de Souza</h2>
+      <p>Turma: 2°A &bull; / Unidade x</p>
+      <p class="profile-description">Abaixo os dados do Usuário</p>
+      <hr>
+      <ion-list no-lines>
 
-<ion-content padding>
- <div align="center">
-  <img class="profile-image" src="assets/imgs/paulinha.png">
-</div>
-<div align="center">
-  <h4>{{(userName | async)?.firstName}} {{(userName | async)?.lastName}}</h4>
-  <h5>Turma: {{(userTurma | async)?.turma}} </h5>
-</div>
+          <ion-item>
+            <ion-label floating>Data de Nascimento</ion-label>
+            <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.dataNasc"></ion-datetime>
+            </ion-item>
 
-  <ion-item>
-    <ion-label floating>Telefone Fixo</ion-label>
-    <ion-input type="text" [(ngModel)]="userData.telFixo"></ion-input>
-  </ion-item>
+            <ion-item [formGroup]="loginForm" (submit)="login()" novalidate>
+              <ion-label floating >  Email</ion-label>
+              <ion-input [(ngModel)]="email"
+                           formControlName="email"
+                           type="text"
+                            clearOnEdit="false">
+                </ion-input>
+              </ion-item>
+              <h6 *ngIf="errorEmail" class="error"> {{messageEmail}}</h6>
 
-  <ion-item>
-    <ion-label floating>Telefone Celular</ion-label>
-    <ion-input type="text" [(ngModel)]="userData.telCel"></ion-input>
-  </ion-item>
+              <ion-item>
+                  <ion-label floating >  Endereço Completo</ion-label>
+                  <ion-textarea 
+                      [(ngModel)]="note" name="note" autocomplete="on" autocorrect="on"></ion-textarea>
+                 </ion-item>
+                 <ion-item>
+                    <ion-label floating>  Telefone Celular</ion-label>
+                    <ion-input type="number"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>  Telefone Fixo</ion-label>
+                        <ion-input type="number"></ion-input>
+                        </ion-item>
+                    
 
-  <ion-item>
-    <ion-label>Cidade</ion-label>
-    <ion-select>
-      <ion-option value="Santa City">Santa City</ion-option>
-      <ion-option value="Cei">Cei</ion-option>
-      <ion-option value="gama">Gama</ion-option>
-    </ion-select>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Endereço Completo</ion-label>
-    <ion-input type="text" [(ngModel)]="userData.endereco"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Data de Nascimento</ion-label>
-    <ion-datetime required displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" [(ngModel)]="userData.dataNasc"></ion-datetime>
-  </ion-item>
-
-  <button color="secondary" ion-button block (click)="salvarPerfil()">Salvar Informações</button>
- 
-  <button color="danger" ion-button block (click)="altearSenha()">Alterar Senha</button>
+      </ion-list>
+      <p class="profile-description">Para Alterar os dados, clique nas ações abaixo:</p>
+      <hr>
+      <a href="#" button ion-button block color="secondary" (click)="login()" icon-start>
+          <ion-icon name='document'></ion-icon>
+          Salvar Informações
+      </a>
+      <a href="#" button ion-button block color="danger" (click)="altearSenha()" icon-start>
+          <ion-icon name='create'></ion-icon>
+          Alterar Senha
+      </a>
+  </div>
 
 </ion-content>

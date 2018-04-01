@@ -6,23 +6,36 @@
       <ion-title>Alterar Senha</ion-title>
     </ion-navbar>
   </ion-header>
-
-
-<ion-content padding text-center>
-        <b>Digite a nova senha de acesso:</b>
-    <ion-card>
-      <ion-item>
-        <ion-label floating>Senha</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-    </ion-card>
-    <ion-card>
-        <ion-item>
-          <ion-label floating>Confirme a senha</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-      </ion-card>
-    <button ion-button (click)="alterarSenha()" icon-only full>
-        <ion-icon>Alterar Senha</ion-icon>
-      </button>
+  
+  <ion-content parallax-header no-bounce class="bg-modal">
+    <div class="header-image"></div>
+    <div class="main-content" text-wrap text-center>
+        <ion-list no-lines>
+  
+            <ion-item [formGroup]="loginForm" (submit)="login()" novalidate>
+                <ion-label floating>Senha</ion-label>
+                <ion-input [(ngModel)]="password"
+                formControlName="password"
+                type="text"
+                 clearOnEdit="false">
+     </ion-input>
+              </ion-item>
+              <span *ngIf="errorPassword" class="error"> {{messagePassword}}</span>
+              <ion-item [formGroup]="loginForm" (submit)="login()" novalidate>
+                  <ion-label floating>Confirme sua senha</ion-label>
+                  <ion-input [(ngModel)]="password"
+                  formControlName="password"
+                  type="text">
+       </ion-input>
+                </ion-item>
+  
+        </ion-list>
+        <hr>
+        <a href="#" button ion-button block color="secondary" (click)="login()" icon-start>
+            <ion-icon name='send'></ion-icon>
+            Enviar
+        </a>
+    </div>
+  
   </ion-content>
+  
