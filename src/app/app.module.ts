@@ -4,10 +4,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { AccordionListComponent } from './../../../ionic3-components/src/components/accordion-list/accordion-list';
 import { MyApp } from './app.component';
 import { UsersProvider } from '../providers/users/users';
 import { HttpClientModule } from '@angular/common/http';
+import { AccordionListComponent } from './../components/accordion-list/accordion-list';
 
 //Páginas
 import { AlteraSenhaPage } from './../pages/altera-senha/altera-senha';
